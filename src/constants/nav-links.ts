@@ -8,7 +8,6 @@ import {
   ReceiptTextIcon,
   SquareCheckIcon,
   TagIcon,
-  TargetIcon,
   UserRoundIcon,
   UsersIcon,
 } from "lucide-react";
@@ -121,25 +120,11 @@ export const WORKSPACE_LINKS: NavLinkType[] = [
     path: "tasks",
     icon: SquareCheckIcon,
   },
-  {
-    id: 2,
-    title: "Issues",
-    isProtected: true,
-    path: "issues",
-    icon: CircleDotIcon,
-  },
-  {
-    id: 3,
-    title: "Objectives",
-    isProtected: true,
-    path: "time-frame",
-    icon: TargetIcon,
-  },
-  {
-    id: 4,
-    title: "Docs",
-    isProtected: true,
-    path: "docs?createdByMe=true",
-    icon: FileTextIcon,
-  },
+  // {
+  //   id: 2,
+  //   title: "Issues",
+  //   isProtected: true,
+  //   path: "issues",
+  //   icon: CircleDotIcon,
+  // }
 ];
