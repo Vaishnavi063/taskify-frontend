@@ -9,14 +9,21 @@ const PricingCard = () => {
   const { open } = useSidebar();
   const { user } = useAuth();
   const navigate = useNavigate();
+
   if (!user) return null;
+
+  const normalizedModel =
+    user?.pricingModel.toLowerCase().charAt(0).toUpperCase() +
+    user?.pricingModel.slice(1).toLowerCase();
+
+  const pricingData = PricingInfo[normalizedModel];
 
   return (
     <div className={cn("bg-muted border p-4 rounded-md", !open && "hidden")}>
-      <h1 className="font-medium mb-2">{user?.pricingModel} Plan</h1>
+      <h1 className="font-medium mb-2">{normalizedModel} Plan</h1>
       <ul className="list-disc ml-6 text-sm">
-        <li>{PricingInfo[user?.pricingModel].projectCount} Project </li>
-        <li>{PricingInfo[user?.pricingModel].memberCount} Members</li>
+        <li>{pricingData.projectCount} Project</li>
+        <li>{pricingData.memberCount} Members</li>
       </ul>
 
       <div className="mt-4">
