@@ -192,7 +192,7 @@ const PricingPlans = [
     name: "Basic",
     title: "Free",
     description:
-      "Perfect for individuals and small teams getting started with BL Sheet.",
+      "Perfect for individuals and small teams getting started with Taskify.",
     features: PricingFeatures.basic,
     highlights: [
       "No credit card required",

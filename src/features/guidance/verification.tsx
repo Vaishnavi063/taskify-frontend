@@ -6,7 +6,7 @@ import { useUpdateDocumentTitle } from "@/hooks";
 
 const Verification = () => {
   useUpdateDocumentTitle({
-    title: "Verification - BL Sheet",
+    title: "Verification - Taskify",
   });
 
   const [searchParams] = useSearchParams();
