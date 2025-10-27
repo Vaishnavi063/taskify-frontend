@@ -53,7 +53,7 @@ const FEATURES: FeatureType[] = [
     id: 6,
     title: "Comprehensive Reporting",
     description:
-      "BL Sheet generate customizable reports to get a complete overview of your financial health.",
+      "Taskifygenerate customizable reports to get a complete overview of your financial health.",
     Icon: FileChartColumnIcon,
     color: "text-purple-500",
   },
