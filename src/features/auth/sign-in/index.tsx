@@ -8,7 +8,7 @@ import AuthenticationStrategy from "../shared/authentication-strategy";
 
 const SignInPage = () => {
   useUpdateDocumentTitle({
-    title: "Sign In - BL Sheet",
+    title: "Sign In - Taskify",
   });
 
   return (

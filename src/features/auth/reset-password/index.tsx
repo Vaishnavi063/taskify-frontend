@@ -5,7 +5,7 @@ import ResetPasswordForm from "./components/reset-password-form";
 
 const ResetPassword = () => {
   useUpdateDocumentTitle({
-    title: "Reset Password - BL Sheet",
+    title: "Reset Password - Taskify",
   });
 
   return (

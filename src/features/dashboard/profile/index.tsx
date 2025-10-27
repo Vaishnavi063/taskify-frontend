@@ -9,7 +9,7 @@ const Profile = () => {
   const { user } = useAuth();
 
   useUpdateDocumentTitle({
-    title: `Profile - BL Sheet`,
+    title: `Profile - Taskify`,
   });
 
   return (
