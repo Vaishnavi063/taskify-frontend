@@ -53,7 +53,7 @@ const FEATURES: FeatureType[] = [
     id: 6,
     title: "Comprehensive Reporting",
     description:
-      "Taskifygenerate customizable reports to get a complete overview of your financial health.",
+      "Nexusgenerate customizable reports to get a complete overview of your financial health.",
     Icon: FileChartColumnIcon,
     color: "text-purple-500",
   },

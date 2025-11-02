@@ -78,7 +78,7 @@ const CreateProject = ({
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="Taskify"
+                        placeholder="Nexus"
                         className="focus-visible:ring-1"
                         {...field}
                       />

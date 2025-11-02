@@ -58,15 +58,15 @@ export interface User {
 }
 
 export enum MemberRole {
-  ADMIN = "Admin",
-  MEMBER = "Member",
-  OWNER = "Owner",
+  ADMIN = "ADMIN",
+  MEMBER = "MEMBER",
+  OWNER = "OWNER",
 }
 
 export enum InvitationStatus {
-  PENDING = "Pending",
-  ACCEPTED = "Accepted",
-  REJECTED = "Rejected",
+  PENDING = "PENDING",
+  ACCEPTED = "ACCEPTED",
+  REJECTED = "REJECTED",
 }
 
 export interface Member {
@@ -94,16 +94,16 @@ export interface Project {
 }
 
 export enum TaskStatus {
-  TODO = "Todo",
-  IN_PROGRESS = "In Progress",
-  UNDER_REVIEW = "Under Review",
-  COMPLETED = "Completed",
+  TODO = "TODO",
+  IN_PROGRESS = "IN_PROGRESS",
+  UNDER_REVIEW = "UNDER_REVIEW",
+  COMPLETED = "COMPLETED",
 }
 
 export enum TaskPriority {
-  LOW = "Low",
-  MEDIUM = "Medium",
-  HIGH = "High",
+  LOW = "LOW",
+  MEDIUM = "MEDIUM",
+  HIGH = "HIGH",
 }
 
 export interface Comment {
@@ -167,14 +167,14 @@ export interface Options {
 }
 
 export enum IssueStatus {
-  OPEN = "Open",
-  CLOSED = "Closed",
+  OPEN = "OPEN",
+  CLOSED = "CLOSED",
 }
 
 export enum IssuePriority {
-  LOW = "Low",
-  MEDIUM = "Medium",
-  HIGH = "High",
+  LOW = "LOW",
+  MEDIUM = "MEDIUM",
+  HIGH = "HIGH",
 }
 
 export interface Issue {

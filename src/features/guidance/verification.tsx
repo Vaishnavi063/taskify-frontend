@@ -6,7 +6,7 @@ import { useUpdateDocumentTitle } from "@/hooks";
 
 const Verification = () => {
   useUpdateDocumentTitle({
-    title: "Verification - Taskify",
+    title: "Verification - Nexus",
   });
 
   const [searchParams] = useSearchParams();

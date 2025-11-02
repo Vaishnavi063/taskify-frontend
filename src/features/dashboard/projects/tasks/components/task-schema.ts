@@ -10,11 +10,11 @@ export const taskShema = z.object({
       message: "Title must not be longer than 100 characters.",
     }),
   description: z.string(),
-  status: z.enum(["Todo", "In Progress", "Under Review", "Completed"], {
+  status: z.enum(["TODO", "IN_PROGRESS", "UNDER_REVIEW", "COMPLETED"], {
     message: "Status is invalid",
   }),
   taskType: z.string({ message: "Task type is required" }),
-  priority: z.enum(["Low", "Medium", "High"], {
+  priority: z.enum(["LOW", "MEDIUM", "HIGH"], {
     message: "Priority is invalid",
   }),
   dueDate: z.date({

@@ -8,7 +8,7 @@ import AuthenticationStrategy from "../shared/authentication-strategy";
 
 const SignInPage = () => {
   useUpdateDocumentTitle({
-    title: "Sign In - Taskify",
+    title: "Sign In - Nexus",
   });
 
   return (

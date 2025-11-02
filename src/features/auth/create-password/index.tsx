@@ -5,7 +5,7 @@ import CreatePasswordForm from "./components/create-password-form";
 
 const CreatePassword = () => {
   useUpdateDocumentTitle({
-    title: "Create Password - Taskify",
+    title: "Create Password - Nexus",
   });
 
   return (
