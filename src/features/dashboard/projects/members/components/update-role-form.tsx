@@ -25,7 +25,7 @@ import { LoaderCircle } from "lucide-react";
 import { MemberRole } from "@/types";
 
 const FormSchema = z.object({
-  role: z.union([z.literal("Admin"), z.literal("Owner"), z.literal("Member")]),
+  role: z.union([z.literal("ADMIN"), z.literal("OWNER"), z.literal("MEMBER")]),
 });
 
 interface UpdateRoleFormProps {

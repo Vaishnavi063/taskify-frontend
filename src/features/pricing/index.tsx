@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PricingPlans } from "@/constants";
 import { useAuth } from "@/hooks";
 import { useNavigate } from "react-router-dom";
 
@@ -27,6 +26,100 @@ const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
+
+type FeatureItem = {
+  icon: React.ElementType;
+  text: string;
+};
+
+type PricingPlan = {
+  name: "Basic" | "Premium" | "Enterprise";
+  title: string;
+  period?: string;
+  popular?: boolean;
+  description: string;
+  savings?: string;
+  features: FeatureItem[];
+  highlights: string[];
+  button: {
+    text: string;
+    variant: "default" | "secondary";
+  };
+};
+
+const PricingFeatures = {
+  basic: [
+    { icon: Check, text: "1 Project" },
+    { icon: Check, text: "Up to 5 Members" },
+    { icon: Check, text: "Community Support" },
+  ],
+  premium: [
+    { icon: Check, text: "10 Projects" },
+    { icon: Check, text: "Up to 20 Members" },
+    { icon: Check, text: "Priority Support" },
+    { icon: Check, text: "Advanced Analytics" },
+  ],
+  enterprise: [
+    { icon: Check, text: "Unlimited Projects" },
+    { icon: Check, text: "Unlimited Members" },
+    { icon: Check, text: "Dedicated Account Manager" },
+    { icon: Check, text: "Custom Integrations" },
+  ],
+};
+
+const PricingPlans: PricingPlan[] = [
+  {
+    name: "Basic",
+    title: "Free",
+    description:
+      "Perfect for individuals and small teams getting started with Nexus.",
+    features: PricingFeatures.basic,
+    highlights: [
+      "No credit card required",
+      "Basic collaboration tools",
+      "Community support",
+    ],
+    button: {
+      text: "Get Started",
+      variant: "default",
+    },
+  },
+  {
+    name: "Premium",
+    title: "$10",
+    period: "/month",
+    popular: true,
+    description:
+      "Ideal for growing teams looking for advanced features and collaboration tools.",
+    features: PricingFeatures.premium,
+    highlights: [
+      "All Basic features",
+      "Priority support",
+      "Advanced analytics",
+    ],
+    savings: "Save 20% with annual billing",
+    button: {
+      text: "Start Free Trial",
+      variant: "default",
+    },
+  },
+  {
+    name: "Enterprise",
+    title: "Custom",
+    description:
+      "Built for large organizations needing scalability and custom solutions.",
+    features: PricingFeatures.enterprise,
+    highlights: [
+      "All Premium features",
+      "Custom contract",
+      "Dedicated success manager",
+    ],
+    button: {
+      text: "Contact Sales",
+      variant: "default",
+    },
+  },
+];
 
 export default function PricingPage() {
   const { isAuth } = useAuth();
