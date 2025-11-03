@@ -52,7 +52,7 @@ const MemberAnalytics = () => {
       const report = (data?.data || []).map((data: any) => ({
         count: data?.completedTasksCount,
         name: data?.user?.fullName,
-        avatar: data?.user?.avatar?.url,
+        avatar: data?.user?.avatar,
       }));
       setReport(report);
     },
