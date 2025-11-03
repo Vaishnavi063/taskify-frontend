@@ -51,13 +51,13 @@ const NavMain = () => {
           ...navMain,
           ...(project?.role === MemberRole.OWNER
             ? [
-                {
-                  id: 3,
-                  title: "Settings",
-                  path: "/dashboard/settings",
-                  icon: Settings,
-                  endPoint: "general",
-                },
+                // {
+                //   id: 3,
+                //   title: "Settings",
+                //   path: "/dashboard/settings",
+                //   icon: Settings,
+                //   endPoint: "general",
+                // },
               ]
             : []),
         ].map((item) => (
