@@ -94,10 +94,10 @@ const UpdateRoleForm = ({
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem className="cursor-pointer" value="Admin">
+                  <SelectItem className="cursor-pointer" value="ADMIN">
                     Admin
                   </SelectItem>
-                  <SelectItem className="cursor-pointer" value="Member">
+                  <SelectItem className="cursor-pointer" value="MEMBER">
                     Member
                   </SelectItem>
                   {/* <SelectItem className="cursor-pointer" value="Owner">
