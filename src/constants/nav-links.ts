@@ -96,13 +96,13 @@ export const SETUP_LINKS: NavLinkType[] = [
     path: "members",
     icon: UserRoundIcon,
   },
-  // {
-  //   id: 3,
-  //   title: "Teams",
-  //   isProtected: true,
-  //   path: "teams",
-  //   icon: UsersIcon,
-  // },
+  {
+    id: 3,
+    title: "Teams",
+    isProtected: true,
+    path: "teams",
+    icon: UsersIcon,
+  },
   // {
   //   id: 4,
   //   title: "Labels",

@@ -16,7 +16,7 @@ const TeamLeader = () => {
   const { projectId } = useParams();
   const { project } = useProject();
 
-  if (!team?.leader.email) return null;
+  if (!team?.leader?.email) return null;
 
   return (
     <div className="border mt-4 rounded-lg px-6 py-3">
@@ -51,14 +51,14 @@ const TeamLeader = () => {
           </Avatar>
           <span>{team?.leader?.user?.fullName}</span>
         </div>
-        <span>{team.leader.email}</span>
+        <span>{team?.leader?.email}</span>
         <Badge
           className={cn(
             MEMBER_ROLE_COLORS[team.leader.role],
             "w-[100px] flex items-center justify-center"
           )}
         >
-          {team.leader.role}
+          {team?.leader?.role}
         </Badge>
       </div>
     </div>
