@@ -103,13 +103,13 @@ export const SETUP_LINKS: NavLinkType[] = [
     path: "teams",
     icon: UsersIcon,
   },
-  // {
-  //   id: 4,
-  //   title: "Labels",
-  //   isProtected: true,
-  //   path: "labels",
-  //   icon: TagIcon,
-  // },
+  {
+    id: 4,
+    title: "Labels",
+    isProtected: true,
+    path: "labels",
+    icon: TagIcon,
+  },
 ];
 
 export const WORKSPACE_LINKS: NavLinkType[] = [
