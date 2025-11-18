@@ -21,7 +21,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-sm mt-2 text-muted-foreground text-center sm:text-start">
-          Nexusis your ultimate tool for managing projects effortlessly.
+          Taskifyis your ultimate tool for managing projects effortlessly.
         </p>
 
         <div className="hidden sm:flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 mt-4">

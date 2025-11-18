@@ -9,7 +9,7 @@ const Profile = () => {
   const { user } = useAuth();
 
   useUpdateDocumentTitle({
-    title: `Profile - Nexus`,
+    title: `Profile - Taskify`,
   });
 
   return (

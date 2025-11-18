@@ -72,7 +72,7 @@ const PricingPlans: PricingPlan[] = [
     name: "Basic",
     title: "Free",
     description:
-      "Perfect for individuals and small teams getting started with Nexus.",
+      "Perfect for individuals and small teams getting started with Taskify.",
     features: PricingFeatures.basic,
     highlights: [
       "No credit card required",
