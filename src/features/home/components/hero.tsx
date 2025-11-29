@@ -44,8 +44,12 @@ const Hero = () => {
   const link = isAuth ? "/dashboard/home" : "/auth/sign-up";
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8 pb-10 px-4 sm:px-8">
-      <GridEffect className="hidden sm:block absolute inset-0" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10 pb-16 px-4 sm:px-8">
+      {/* Grid */}
+      <GridEffect className="hidden sm:block absolute inset-0 opacity-30 dark:opacity-15" />
+
+      {/* Glow wash */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 blur-[120px]" />
 
       <motion.div
         className="relative z-10 max-w-6xl mx-auto w-full"
@@ -53,11 +57,12 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
+        {/* Welcome Chip */}
         <motion.div
           variants={itemVariants}
           className="flex justify-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-xs font-medium text-foreground">
               Welcome to {siteConfigs.name}
@@ -65,30 +70,30 @@ const Hero = () => {
           </div>
         </motion.div>
 
+        {/* Title */}
         <motion.div variants={itemVariants} className="text-center mb-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
-            <span className="inline-block">Simplifying</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-tight">
+            Simplifying
             <br />
-            <span className="inline-block">
-              <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 text-transparent bg-clip-text">
-                Project Management
-              </span>
+            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 text-transparent bg-clip-text">
+              Project Management
             </span>
           </h1>
         </motion.div>
 
+        {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-center text-lg sm:text-lg text-black max-w-2xl mx-auto mb-8 tracking-tighter "
+          className="text-center text-base sm:text-lg text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto mb-8 tracking-tight"
         >
           Taskify is your ultimate tool for managing projects effortlessly.
           Collaborate, organize, and deliver with confidence.
         </motion.p>
 
-        {/* Features Row */}
+        {/* Features */}
         <motion.div
           variants={itemVariants}
-          className="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12 px-4"
+          className="hidden sm:grid grid-cols-3 gap-4 max-w-3xl mx-auto mb-12 px-4"
         >
           {[
             {
@@ -109,7 +114,16 @@ const Hero = () => {
           ].map((feature, idx) => (
             <motion.div
               key={idx}
-              className="text-center p-4 rounded-lg bg-muted/50 backdrop-blur border border-border/50 hover:border-primary/50 transition-all"
+              className="
+                text-center
+                p-4
+                rounded-xl
+                bg-muted/40 dark:bg-muted/20
+                backdrop-blur-md
+                border border-border/50
+                hover:border-primary/50
+                transition-all
+              "
               whileHover={{ y: -5 }}
             >
               <div className="text-3xl mb-2">{feature.icon}</div>
@@ -119,14 +133,21 @@ const Hero = () => {
           ))}
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
           <Link to={link}>
             <motion.button
-              className="inline-flex items-center gap-2 px-8 py-2 rounded-full bg-primary text-primary-foreground font-semibold text-md hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
+              className="
+                inline-flex items-center gap-2 px-8 py-2 rounded-full
+                bg-primary text-primary-foreground
+                font-semibold text-md
+                hover:bg-primary/90
+                transition-all shadow-lg
+                hover:shadow-xl
+              "
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -134,8 +155,16 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5" />
             </motion.button>
           </Link>
+
           <motion.button
-            className="inline-flex items-center gap-2 px-8 py-1.5 rounded-full border-2 border-primary/30 text-foreground font-semibold text-md hover:border-primary/60 hover:bg-primary/5 transition-all"
+            className="
+              inline-flex items-center gap-2 px-8 py-1.5 rounded-full
+              border border-primary/30
+              text-foreground font-semibold
+              hover:border-primary/60
+              hover:bg-primary/10
+              transition-all
+            "
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -144,7 +173,6 @@ const Hero = () => {
           </motion.button>
         </motion.div>
 
-        {/* Floating Elements */}
         <motion.div
           variants={itemVariants}
           className="text-center text-sm text-muted-foreground"
@@ -153,14 +181,14 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Floating cards in background */}
+      {/* Floating blobs */}
       <motion.div
-        className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-lg blur-xl"
+        className="absolute top-20 left-10 w-36 h-36 bg-primary/20 dark:bg-primary/10 rounded-xl blur-[80px]"
         variants={floatingVariants}
         animate="animate"
       />
       <motion.div
-        className="absolute bottom-32 right-10 w-40 h-40 bg-primary/5 rounded-lg blur-xl"
+        className="absolute bottom-32 right-10 w-44 h-44 bg-primary/10 dark:bg-primary/5 rounded-xl blur-[100px]"
         variants={floatingVariants}
         animate="animate"
         style={{ animationDelay: "1s" }}
