@@ -2,24 +2,35 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const LandingImg = () => {
   return (
-    <div className="relative pb-8">
-      <div className="mx-auto bg-muted overflow-hidden p-4 md:p-8 shadow-sm relative">
-        <div className="rounded-lg border overflow-hidden">
+    <section className="relative py-16 md:py-24 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Glow Background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 blur-[120px]" />
+
+        <div className="overflow-hidden rounded-2xl bg-background border border-border">
           <AspectRatio ratio={16 / 9}>
             <img
-              className="hidden dark:block"
-              src="/images/dark-task-img.png"
-              alt="demo img"
+              src="/images/light-task-img.png"
+              alt="Taskify Dashboard"
+              className="
+                  w-full h-full
+                  object-contain
+                  dark:hidden
+                "
             />
             <img
-              className="dark:hidden block"
-              src="/images/light-task-img.png"
-              alt="demo img"
+              src="/images/dark-task-img.png"
+              alt="Taskify Dashboard"
+              className="
+                  w-full h-full
+                  object-contain
+                  hidden dark:block
+                "
             />
           </AspectRatio>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -7,10 +7,18 @@ const GridEffect = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <div
-      className={cn(
-        "absolute z-0 inset-0 size-full bg-[size:14px_24px] bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#A3A3A31d_1px,transparent_1px),linear-gradient(to_bottom,#A3A3A31d_1px,transparent_1px)]",
-        className
-      )}
+      style={{
+        backgroundImage: `
+        linear-gradient(45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%),
+        linear-gradient(-45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%)
+      `,
+        backgroundSize: "40px 40px",
+        WebkitMaskImage:
+          "radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)",
+        maskImage:
+          "radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)",
+      }}
+      className={cn("absolute inset-0", className)}
       {...props}
     />
   );
