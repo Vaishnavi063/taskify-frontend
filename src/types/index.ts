@@ -227,14 +227,14 @@ export interface Doc {
 }
 
 export enum DocStatus {
-  PUBLISHED = "Published",
-  DRAFT = "Draft",
-  ARCHIVED = "Archived",
+  PUBLISHED = "PUBLISHED",
+  DRAFT = "DRAFT",
+  ARCHIVED = "ARCHIVED",
 }
 
 export enum DocAccessType {
-  PRIVATE = "Private",
-  PUBLIC = "Public",
+  PRIVATE = "PRIVATE",
+  PUBLIC = "PUBLIC",
 }
 
 export interface Document {

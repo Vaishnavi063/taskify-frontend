@@ -37,7 +37,7 @@ const useGetDoc = () => {
   return {
     isLoading,
     refetch,
-    doc: response?.data?.data,
+    doc: response?.data?.data?.doc,
   };
 };
 
