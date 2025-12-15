@@ -127,4 +127,11 @@ export const WORKSPACE_LINKS: NavLinkType[] = [
   //   path: "issues",
   //   icon: CircleDotIcon,
   // }
+  {
+    id: 2,
+    title: "Docs",
+    isProtected: true,
+    path: "docs?createdByMe=true",
+    icon: FileTextIcon,
+  },
 ];

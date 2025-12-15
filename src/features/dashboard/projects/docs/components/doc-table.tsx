@@ -86,10 +86,10 @@ const DocTable = ({ docs, isLoading, refetchDocs }: DocTableProps) => {
                       alt="profile-picture"
                     />
                     <AvatarFallback className="bg-foreground text-card">
-                      {doc.creator.fullName[0].toUpperCase()}
+                      {doc.creator?.fullName[0].toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
-                  <span>{doc.creator.fullName}</span>
+                  <span>{doc.creator?.fullName}</span>
                 </div>
               </TableCell>
               {doc?.members?.length ? (

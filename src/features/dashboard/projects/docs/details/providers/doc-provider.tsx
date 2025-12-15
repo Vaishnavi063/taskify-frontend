@@ -21,6 +21,6 @@ export const DocContext = createContext<DocContext>({
 
 export const useDocContext = () => {
   const context = useContext(DocContext);
-  if (!context || !context.doc) throw new Error("Doc context not found");
+  if (!context) throw new Error("Doc context not found");
   return context;
 };

@@ -17,7 +17,7 @@ const ChatLayout = () => {
   return (
     <div>
       <div className="flex h-[calc(100vh_-100px)] border">
-        <ResizablePanelGroup direction="horizontal" autoSaveId="Taskify-id">
+        <ResizablePanelGroup direction="horizontal" autoSaveId="Ascent-id">
           <ResizablePanel defaultSize={20} minSize={11} className="bg-muted/50">
             <Sidebar />
           </ResizablePanel>

@@ -13,7 +13,7 @@ import apis from "../dashboard/projects/members/apis";
 
 const Invitation = () => {
   useUpdateDocumentTitle({
-    title: "Invitation - Taskify",
+    title: "Invitation - Ascent",
   });
 
   const navigate = useNavigate();
