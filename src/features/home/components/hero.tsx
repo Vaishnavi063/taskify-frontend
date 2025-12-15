@@ -86,7 +86,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-center text-base sm:text-lg text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto mb-8 tracking-tight"
         >
-          Taskify is your ultimate tool for managing projects effortlessly.
+          Ascent is your ultimate tool for managing projects effortlessly.
           Collaborate, organize, and deliver with confidence.
         </motion.p>
 
@@ -177,7 +177,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-center text-sm text-muted-foreground"
         >
-          <p>✨ Join 10,000+ teams already using Taskify</p>
+          <p>✨ Join 10,000+ teams already using Ascent</p>
         </motion.div>
       </motion.div>
 

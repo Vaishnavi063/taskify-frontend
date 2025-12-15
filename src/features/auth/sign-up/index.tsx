@@ -8,7 +8,7 @@ import AuthenticationStrategy from "../shared/authentication-strategy";
 
 const SignUpPage = () => {
   useUpdateDocumentTitle({
-    title: "Sign Up - Taskify",
+    title: "Sign Up - Ascent",
   });
 
   return (

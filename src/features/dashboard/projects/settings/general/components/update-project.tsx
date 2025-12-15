@@ -84,7 +84,7 @@ const UpdateProject = ({ refetchProject, project }: UpdateProjectProps) => {
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="Taskify"
+                        placeholder="Ascent"
                         className="focus-visible:ring-1"
                         {...field}
                       />

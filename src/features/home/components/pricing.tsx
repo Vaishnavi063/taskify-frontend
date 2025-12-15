@@ -76,7 +76,7 @@ const PricingPlans: PricingPlan[] = [
     name: "Basic",
     title: "Free",
     description:
-      "Perfect for individuals and small teams getting started with Taskify.",
+      "Perfect for individuals and small teams getting started with Ascent.",
     features: PricingFeatures.basic,
     highlights: [
       "No credit card required",

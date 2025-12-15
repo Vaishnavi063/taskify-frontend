@@ -11,7 +11,7 @@ const LandingImg = () => {
           <AspectRatio ratio={16 / 9}>
             <img
               src="/images/light-task-img.png"
-              alt="Taskify Dashboard"
+              alt="Ascent Dashboard"
               className="
                   w-full h-full
                   object-contain
@@ -20,7 +20,7 @@ const LandingImg = () => {
             />
             <img
               src="/images/dark-task-img.png"
-              alt="Taskify Dashboard"
+              alt="Ascent Dashboard"
               className="
                   w-full h-full
                   object-contain

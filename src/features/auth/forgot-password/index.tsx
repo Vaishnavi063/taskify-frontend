@@ -8,7 +8,7 @@ import ForgotPasswordForm from "./components/forgot-password-form";
 
 const ForgotPassword = () => {
   useUpdateDocumentTitle({
-    title: "Forgot Password - Taskify",
+    title: "Forgot Password - Ascent",
   });
 
   return (

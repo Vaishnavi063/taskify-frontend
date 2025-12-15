@@ -8,7 +8,7 @@ import FAQSection from "./components/faq";
 
 const HomePage = () => {
   useUpdateDocumentTitle({
-    title: "Taskify - Simplifying Project Management",
+    title: "Ascent - Simplifying Project Management",
   });
 
   return (
