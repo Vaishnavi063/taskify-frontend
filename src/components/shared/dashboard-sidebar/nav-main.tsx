@@ -1,31 +1,25 @@
 import { cn } from "@/lib/utils";
 import { NavLink, useLocation } from "react-router-dom";
-import { Settings, Wrench, SlidersHorizontal } from "lucide-react";
+import { ChevronRight, Wrench, SlidersHorizontal } from "lucide-react";
 import {
   SidebarContent,
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import useProject from "@/hooks/use-project";
-import { MemberRole } from "@/types";
-
-const navMain = [
-  {
-    id: 1,
-    title: "Setup",
-    path: "/dashboard/setup",
-    icon: Wrench,
-    endPoint: "details",
-  },
-  {
-    id: 2,
-    title: "Workspace",
-    path: "/dashboard/workspace",
-    icon: SlidersHorizontal,
-    endPoint: "tasks",
-  },
-];
+import { SETUP_LINKS, WORKSPACE_LINKS } from "@/constants";
 
 const NavMain = () => {
   const { open, isMobile, setOpenMobile } = useSidebar();
@@ -44,39 +38,93 @@ const NavMain = () => {
     );
   }
 
+  const navGroups = [
+    {
+      id: 1,
+      title: "Setup",
+      basePath: "/dashboard/setup",
+      icon: Wrench,
+      items: SETUP_LINKS,
+    },
+    {
+      id: 2,
+      title: "Workspace",
+      basePath: "/dashboard/workspace",
+      icon: SlidersHorizontal,
+      items: WORKSPACE_LINKS,
+    },
+  ];
+
   return (
     <SidebarContent>
-      <SidebarGroup className="space-y-1">
-        {[
-          ...navMain,
-          ...(project?.role === MemberRole.OWNER
-            ? [
-                // {
-                //   id: 3,
-                //   title: "Settings",
-                //   path: "/dashboard/settings",
-                //   icon: Settings,
-                //   endPoint: "general",
-                // },
-              ]
-            : []),
-        ].map((item) => (
-          <SidebarMenu key={item.id}>
-            <NavLink
-              onClick={() => setOpenMobile(false)}
-              to={`${item.path}/${project?.projectId}/${item.endPoint}`}
-              className={cn(
-                "flex items-center space-x-2 hover:bg-muted p-2 rounded-lg text-foreground",
-                pathname.includes(item.path) && "bg-muted text-active"
-              )}
-            >
-              <item.icon size={15} />
-              <span className={cn("text-sm", !open && !isMobile && "hidden")}>
-                {item.title}
-              </span>
-            </NavLink>
-          </SidebarMenu>
-        ))}
+      <SidebarGroup>
+        <SidebarMenu>
+          {navGroups.map((group) => {
+            const isGroupActive = pathname.includes(group.basePath);
+            
+            return (
+              <Collapsible
+                key={group.id}
+                asChild
+                defaultOpen={isGroupActive}
+                className="group/collapsible"
+              >
+                <SidebarMenuItem>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton
+                      tooltip={!open && !isMobile ? group.title : undefined}
+                      className={cn(
+                        "hover:bg-muted/50",
+                        isGroupActive && "bg-muted/50",
+                        !open && !isMobile && "flex-col h-16 gap-1"
+                      )}
+                    >
+                      <group.icon size={20} />
+                      {open || isMobile ? (
+                        <>
+                          <span className="text-sm font-medium">{group.title}</span>
+                          <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                        </>
+                      ) : (
+                        <span className="text-xs">{group.title}</span>
+                      )}
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  {(open || isMobile) && (
+                    <CollapsibleContent>
+                      <SidebarMenuSub>
+                        {group.items.map((item) => {
+                          const itemPath = `${group.basePath}/${project?.projectId}/${item.path}`;
+                          const isActive = pathname.includes(itemPath.split('?')[0]);
+                          
+                          return (
+                            <SidebarMenuSubItem key={item.id}>
+                              <SidebarMenuSubButton
+                                asChild
+                                className={cn(
+                                  "hover:bg-muted/50",
+                                  isActive && "bg-muted/50 text-active"
+                                )}
+                              >
+                                <NavLink
+                                  to={itemPath}
+                                  onClick={() => setOpenMobile(false)}
+                                >
+                                  <item.icon size={15} />
+                                  <span className="text-sm">{item.title}</span>
+                                </NavLink>
+                              </SidebarMenuSubButton>
+                            </SidebarMenuSubItem>
+                          );
+                        })}
+                      </SidebarMenuSub>
+                    </CollapsibleContent>
+                  )}
+                </SidebarMenuItem>
+              </Collapsible>
+            );
+          })}
+        </SidebarMenu>
       </SidebarGroup>
     </SidebarContent>
   );
